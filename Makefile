@@ -6,7 +6,7 @@
 #    By: yshimoma <yshimoma@student.42tokyo.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/15 13:28:00 by yshimoma          #+#    #+#              #
-#    Updated: 2023/01/15 14:22:08 by yshimoma         ###   ########.fr        #
+#    Updated: 2023/01/15 15:26:22 by yshimoma         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,14 +29,14 @@ CFLAGS  = -Wall -Wextra -Werror
 # clean fclean reを実行する(ビルドを実行)
 all:        ${NAME}
 
+# oファイルを.aファイルにコンパイルされる
+${NAME}:    ${OBJS}
+		ar -r ${NAME} ${OBJS}
+
 # .cファイルを.oファイルに変換
 .c.o:
 	    ${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
 
-# ${NAME}が依存関係にあると実行される
-# oファイルを.aファイルにコンパイルされる
-${NAME}:    ${OBJS}
-	    ${CC} ${CFLAGS} -o ${NAME} ${OBJS}
 
 # 全てのオブジェクトファイルを削除
 clean:
@@ -45,6 +45,7 @@ clean:
 # 全てのオブジェクトファイルと静的ライブラリを削除
 fclean:     clean
 		${RM} ${NAME}
+
 
 # fclean→allを実行(コンパイルのやり直し)
 re:         fclean all
