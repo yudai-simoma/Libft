@@ -6,7 +6,7 @@
 /*   By: yshimoma <yshimoma@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/11 20:52:17 by yshimoma          #+#    #+#             */
-/*   Updated: 2023/01/15 13:55:19 by yshimoma         ###   ########.fr       */
+/*   Updated: 2023/01/15 15:45:10 by yshimoma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 ** s1 の文字と s2 の文字が一致した場合、次の文字同士を比較する
 ** s2の文字数と、一致した数が同じ場合、tureを返す
 */
-int	ft_match_src(const char *haystack, const char *needle, size_t len)
+static int	ft_match_src(const char *haystack, const char *needle, size_t len)
 {
 	size_t	i;
 	size_t	match_count;

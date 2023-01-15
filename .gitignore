@@ -4,4 +4,5 @@
 #a.outファイルを無視
 /a.out
 
-
+#テスターファイルを無視
+/libft-tester-tokyo/
