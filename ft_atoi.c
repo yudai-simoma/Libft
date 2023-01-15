@@ -6,11 +6,11 @@
 /*   By: yshimoma <yshimoma@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/14 16:33:24 by yshimoma          #+#    #+#             */
-/*   Updated: 2023/01/14 16:52:15 by yshimoma         ###   ########.fr       */
+/*   Updated: 2023/01/15 13:56:33 by yshimoma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
 /*
 ** strの文字列の最初の数字を、int型に変換する関数
@@ -24,15 +24,12 @@ int	ft_atoi(const char *str)
 	i = 0;
 	sign = 0;
 	result_num = 0;
-	// while ((str[i] != '\0')
-	// 	&& ((str[i] >= 9 && str[i] <= 13) || (str[i] == 32)))
-	// 	i++;
 	while ((str[i] != '\0') && (str[i] == '+' || str[i] == '-'))
 	{
 		if (str[i] == '-')
 			sign++;
 		if (i != 0)
-			return(0);
+			return (0);
 		i++;
 	}
 	while ((str[i] != '\0') && (str[i] >= '0' && str[i] <= '9'))
@@ -46,31 +43,31 @@ int	ft_atoi(const char *str)
 	return (result_num);
 }
 
-#include <stdio.h>
-int	main(void)
-{
-	printf("%d\n",atoi("12345"));
-	printf("%d\n",atoi(""));
-	printf("%d\n",atoi("123aa"));
-	printf("%d\n",atoi("abcd"));
-	printf("%d\n",atoi("@!#$"));
-	printf("%d\n",atoi("123aa456"));
-	printf("%d\n",atoi("aa456"));
-	printf("%d\n",atoi("-123aa456"));
-	printf("%d\n",atoi("--123aa456"));
-	printf("%d\n",atoi("+-123aa456"));
-	printf("%d\n",atoi("+123aa456"));
-	printf("-----------------------------\n");
+// #include <stdio.h>
+// int	main(void)
+// {
+// 	printf("%d\n",atoi("12345"));
+// 	printf("%d\n",atoi(""));
+// 	printf("%d\n",atoi("123aa"));
+// 	printf("%d\n",atoi("abcd"));
+// 	printf("%d\n",atoi("@!#$"));
+// 	printf("%d\n",atoi("123aa456"));
+// 	printf("%d\n",atoi("aa456"));
+// 	printf("%d\n",atoi("-123aa456"));
+// 	printf("%d\n",atoi("--123aa456"));
+// 	printf("%d\n",atoi("+-123aa456"));
+// 	printf("%d\n",atoi("+123aa456"));
+// 	printf("-----------------------------\n");
 
-	printf("%d\n",ft_atoi("12345"));
-	printf("%d\n",ft_atoi(""));
-	printf("%d\n",ft_atoi("123aa"));
-	printf("%d\n",ft_atoi("abcd"));
-	printf("%d\n",ft_atoi("@!#$"));
-	printf("%d\n",ft_atoi("123aa456"));
-	printf("%d\n",ft_atoi("aa456"));
-	printf("%d\n",ft_atoi("-123aa456"));
-	printf("%d\n",ft_atoi("--123aa456"));
-	printf("%d\n",ft_atoi("+-123aa456"));
-	printf("%d\n",ft_atoi("+123aa456"));
-}
+// 	printf("%d\n",ft_atoi("12345"));
+// 	printf("%d\n",ft_atoi(""));
+// 	printf("%d\n",ft_atoi("123aa"));
+// 	printf("%d\n",ft_atoi("abcd"));
+// 	printf("%d\n",ft_atoi("@!#$"));
+// 	printf("%d\n",ft_atoi("123aa456"));
+// 	printf("%d\n",ft_atoi("aa456"));
+// 	printf("%d\n",ft_atoi("-123aa456"));
+// 	printf("%d\n",ft_atoi("--123aa456"));
+// 	printf("%d\n",ft_atoi("+-123aa456"));
+// 	printf("%d\n",ft_atoi("+123aa456"));
+// }

@@ -6,22 +6,11 @@
 /*   By: yshimoma <yshimoma@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/11 20:22:56 by yshimoma          #+#    #+#             */
-/*   Updated: 2023/01/11 20:38:18 by yshimoma         ###   ########.fr       */
+/*   Updated: 2023/01/15 13:55:16 by yshimoma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// #include <string.h>
-// #include <stdio.h>
-
-// int	ft_strlen(char *str)
-// {
-// 	int	i;
-
-// 	i = 0;
-// 	while (str[i] != '\0')
-// 		i++;
-// 	return (i);
-// }
+#include "libft.h"
 
 /*
 ** 文字列の「最後」から「文字」を検索して見つかった場所をポインタで返します。
@@ -40,6 +29,7 @@ char	*ft_strrchr(const char *s, int c)
 	return (0);
 }
 
+// #include <stdio.h>
 // int	main(void)
 // {
 // 	char	test[20] = "123456311";

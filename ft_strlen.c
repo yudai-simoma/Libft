@@ -6,11 +6,11 @@
 /*   By: yshimoma <yshimoma@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 19:58:00 by yshimoma          #+#    #+#             */
-/*   Updated: 2023/01/14 14:04:50 by yshimoma         ###   ########.fr       */
+/*   Updated: 2023/01/15 13:55:26 by yshimoma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include "libft.h"
 
 /*
 ** 与えられた文字列の桁数を返す

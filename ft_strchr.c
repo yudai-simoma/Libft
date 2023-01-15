@@ -6,12 +6,11 @@
 /*   By: yshimoma <yshimoma@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/11 18:33:16 by yshimoma          #+#    #+#             */
-/*   Updated: 2023/01/11 20:38:27 by yshimoma         ###   ########.fr       */
+/*   Updated: 2023/01/15 13:55:42 by yshimoma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// #include <string.h>
-// #include <stdio.h>
+#include "libft.h"
 
 /*
 ** 文字列の先頭から「文字」を検索して見つかった場所をポインタで返します。
@@ -27,6 +26,7 @@ char	*ft_strchr(const char *s, int c)
 	return (0);
 }
 
+// #include <stdio.h>
 // int	main(void)
 // {
 // 	char	test[20] = "abcdefghijk";

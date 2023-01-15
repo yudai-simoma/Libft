@@ -6,12 +6,11 @@
 /*   By: yshimoma <yshimoma@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/10 20:03:19 by yshimoma          #+#    #+#             */
-/*   Updated: 2023/01/10 20:06:46 by yshimoma         ###   ########.fr       */
+/*   Updated: 2023/01/15 13:56:04 by yshimoma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// #include <ctype.h>
-// #include <stdio.h>
+#include "libft.h"
 
 /*
 ** 引数c が数字であれば 0以外を返し、そうでなければ 0 を返す。
@@ -24,6 +23,7 @@ int	ft_isdigit(int c)
 		return (0);
 }
 
+// #include <stdio.h>
 // int	main(void)
 // {
 // 	printf("%d\n", isdigit('a'));

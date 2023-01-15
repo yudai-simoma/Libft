@@ -6,11 +6,11 @@
 /*   By: yshimoma <yshimoma@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/14 16:26:37 by yshimoma          #+#    #+#             */
-/*   Updated: 2023/01/14 16:32:23 by yshimoma         ###   ########.fr       */
+/*   Updated: 2023/01/15 13:55:11 by yshimoma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ctype.h>
+#include "libft.h"
 
 /*
 ** 大文字の英字を小文字に変換する関数です。
@@ -23,10 +23,10 @@ int	ft_tolower(int c)
 	return (c);
 }
 
-#include <stdio.h>
-int	main(void)
-{
-	printf("大文字を小文字に変換→%c\n", tolower('A'));
-	printf("大文字を小文字に変換→%c\n", ft_tolower('A'));
-	return (0);
-}
+// #include <stdio.h>
+// int	main(void)
+// {
+// 	printf("大文字を小文字に変換→%c\n", tolower('A'));
+// 	printf("大文字を小文字に変換→%c\n", ft_tolower('A'));
+// 	return (0);
+// }

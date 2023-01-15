@@ -6,12 +6,11 @@
 /*   By: yshimoma <yshimoma@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/10 20:06:59 by yshimoma          #+#    #+#             */
-/*   Updated: 2023/01/10 20:59:13 by yshimoma         ###   ########.fr       */
+/*   Updated: 2023/01/15 13:56:00 by yshimoma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// #include <ctype.h>
-// #include <stdio.h>
+#include "libft.h"
 
 /*
 ** 印字文字（表示可能文字）かどうか判定する。
@@ -24,6 +23,7 @@ int	ft_isprint(int c)
 		return (0);
 }
 
+// #include <stdio.h>
 // int	main(void)
 // {
 // 	printf("%d\n", isprint('a'));

@@ -6,24 +6,11 @@
 /*   By: yshimoma <yshimoma@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 12:39:43 by yshimoma          #+#    #+#             */
-/*   Updated: 2023/01/13 19:50:34 by yshimoma         ###   ########.fr       */
+/*   Updated: 2023/01/15 13:55:34 by yshimoma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-
-/*
-** 与えられた文字列の桁数を返す
-*/
-size_t	ft_strlen(const char *s)
-{
-	size_t	i;
-
-	i = 0;
-	while (s[i] != '\0')
-		i++;
-	return (i);
-}
+#include "libft.h"
 
 /*
 ** 文字型配列destのうしろに文字列srcを連結します。
@@ -53,23 +40,23 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	return (result_num);
 }
 
-#include <stdio.h>
+// #include <stdio.h>
 
-int	main(void)
-{
-    char str1[50] = "ABCDEF123456789";
-    const char str2[] = "123";
-    char str3[50] = "ABCDEF123456789";
-    const char str4[] = "123";
+// int	main(void)
+// {
+//     char str1[50] = "ABCDEF123456789";
+//     const char str2[] = "123";
+//     char str3[50] = "ABCDEF123456789";
+//     const char str4[] = "123";
 
-    printf("%lu\n", strlcat(str1, str2, 40));
-	printf("%s\n", str1);
-    printf("%lu\n", strlcat(str1, str2, 21));
-	printf("%s\n", str1);
-	printf("\n");
-    printf("%zu\n", ft_strlcat(str3, str4, 40)); 
-    printf("%s\n", str3);
-	printf("%zu\n", ft_strlcat(str3, str4, 21));
-	printf("%s\n", str3);
-    return (0);
-}
+//     printf("%lu\n", strlcat(str1, str2, 40));
+// 	printf("%s\n", str1);
+//     printf("%lu\n", strlcat(str1, str2, 21));
+// 	printf("%s\n", str1);
+// 	printf("\n");
+//     printf("%zu\n", ft_strlcat(str3, str4, 40)); 
+//     printf("%s\n", str3);
+// 	printf("%zu\n", ft_strlcat(str3, str4, 21));
+// 	printf("%s\n", str3);
+//     return (0);
+// }

@@ -6,11 +6,11 @@
 /*   By: yshimoma <yshimoma@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/14 11:27:37 by yshimoma          #+#    #+#             */
-/*   Updated: 2023/01/14 14:49:22 by yshimoma         ###   ########.fr       */
+/*   Updated: 2023/01/15 13:55:51 by yshimoma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include "libft.h"
 
 /*
 ** 指定バイト数分のメモリをコピーする関数です。
@@ -32,16 +32,16 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 	return (dst);
 }
 
-#include <stdio.h>
-int	main(void)
-{
-	char buf[] = "ABCDDEF";
-	char buf1[] = "ABCDDEF";
-	char buf2[] = "123456789";
+// #include <stdio.h>
+// int	main(void)
+// {
+// 	char buf[] = "ABCDDEF";
+// 	char buf1[] = "ABCDDEF";
+// 	char buf2[] = "123456789";
 
-	memcpy(buf, buf2, 3);
-	printf("コピー後のbuf文字列→%s\n",buf);
-	ft_memcpy(buf1, buf2, 3);
-	printf("コピー後のbuf文字列→%s\n",buf1);
-	return (0);
-}
+// 	memcpy(buf, buf2, 3);
+// 	printf("コピー後のbuf文字列→%s\n",buf);
+// 	ft_memcpy(buf1, buf2, 3);
+// 	printf("コピー後のbuf文字列→%s\n",buf1);
+// 	return (0);
+// }

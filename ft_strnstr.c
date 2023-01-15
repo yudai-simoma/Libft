@@ -6,25 +6,11 @@
 /*   By: yshimoma <yshimoma@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/11 20:52:17 by yshimoma          #+#    #+#             */
-/*   Updated: 2023/01/13 19:43:24 by yshimoma         ###   ########.fr       */
+/*   Updated: 2023/01/15 13:55:19 by yshimoma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-#include <stdio.h>
-
-/*
-** 与えられた文字列の桁数を返す
-*/
-size_t	ft_strlen(const char *s)
-{
-	size_t	i;
-
-	i = 0;
-	while (s[i] != '\0')
-		i++;
-	return (i);
-}
+#include "libft.h"
 
 /*
 ** s1 の文字と s2 の文字が一致した場合、次の文字同士を比較する
@@ -81,25 +67,26 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	return (0);
 }
 
-int	main(void)
-{
-	const char *largestring1 = "Foo Bar Baz";
-	const char *smallstring1 = "Bar";
-	char *ptr1;
-	ptr1 = strstr(largestring1, smallstring1);
+// #include <stdio.h>
+// int	main(void)
+// {
+// 	const char *largestring1 = "Foo Bar Baz";
+// 	const char *smallstring1 = "Bar";
+// 	char *ptr1;
+// 	ptr1 = strstr(largestring1, smallstring1);
 
-	const char *largestring = "Foo Bar Baz";
-	const char *smallstring = "Bar";
-	char *ptr;
-	ptr = strnstr(largestring, smallstring, 7);
+// 	const char *largestring = "Foo Bar Baz";
+// 	const char *smallstring = "Bar";
+// 	char *ptr;
+// 	ptr = strnstr(largestring, smallstring, 7);
 
-	const char *largestring2 = "Foo Bar Baz";
-	const char *smallstring2 = "Bar";
-	char *ptr2;
-	ptr2 = ft_strnstr(largestring2, smallstring2, 7);
+// 	const char *largestring2 = "Foo Bar Baz";
+// 	const char *smallstring2 = "Bar";
+// 	char *ptr2;
+// 	ptr2 = ft_strnstr(largestring2, smallstring2, 7);
 
-	printf("%s\n", ptr1);
-	printf("%s\n", ptr);
-	printf("%s\n", ptr2);
-	return (0);
-}
+// 	printf("%s\n", ptr1);
+// 	printf("%s\n", ptr);
+// 	printf("%s\n", ptr2);
+// 	return (0);
+// }

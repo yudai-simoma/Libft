@@ -6,11 +6,11 @@
 /*   By: yshimoma <yshimoma@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/05 22:15:07 by yshimoma          #+#    #+#             */
-/*   Updated: 2023/01/13 19:59:29 by yshimoma         ###   ########.fr       */
+/*   Updated: 2023/01/15 13:55:23 by yshimoma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include "libft.h"
 
 /*
 ** 文字列*s1 と文字列*s2 を先頭からn文字比較します。'\0'以降の比較は行いません。
@@ -29,25 +29,25 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 	return (0);
 }
 
-#include <stdio.h>
+// #include <stdio.h>
 
-int	main(void)
-{
-    char str[] = "ABC";
-    printf("ABC: ABE   = %d\n", strncmp(str, "ABE", -4));
-    printf("ABC: ABC   = %d\n", strncmp(str, "ABC", 4));
-    printf("AZC: A   = %d\n", strncmp(str, "A", 2));
-    printf("ABC: ACCD  = %d\n", strncmp(str, "ACCD", 3));
-    printf("ABC: AB    = %d\n", strncmp(str, "AB", 2));
-    printf("ABC: B     = %d\n", strncmp(str, "B", 2));
-    printf("ABC: A     = %d\n", strncmp(str, "A", 2));
-	printf("\n");
-	printf("ABC: ABC   = %d\n", ft_strncmp(str, "ABE", -4));
-    printf("ABC: ABC   = %d\n", ft_strncmp(str, "ABC", 4));
-    printf("AZC: A   = %d\n", ft_strncmp(str, "A", 2));
-    printf("ABC: ACCD  = %d\n", ft_strncmp(str, "ACCD", 3));
-    printf("ABC: AB    = %d\n", ft_strncmp(str, "AB", 2));
-    printf("ABC: B     = %d\n", ft_strncmp(str, "B", 2));
-    printf("ABC: A     = %d\n", ft_strncmp(str, "A", 2));
-    return (0);
-}
+// int	main(void)
+// {
+//     char str[] = "ABC";
+//     printf("ABC: ABE   = %d\n", strncmp(str, "ABE", -4));
+//     printf("ABC: ABC   = %d\n", strncmp(str, "ABC", 4));
+//     printf("AZC: A   = %d\n", strncmp(str, "A", 2));
+//     printf("ABC: ACCD  = %d\n", strncmp(str, "ACCD", 3));
+//     printf("ABC: AB    = %d\n", strncmp(str, "AB", 2));
+//     printf("ABC: B     = %d\n", strncmp(str, "B", 2));
+//     printf("ABC: A     = %d\n", strncmp(str, "A", 2));
+// 	printf("\n");
+// 	printf("ABC: ABC   = %d\n", ft_strncmp(str, "ABE", -4));
+//     printf("ABC: ABC   = %d\n", ft_strncmp(str, "ABC", 4));
+//     printf("AZC: A   = %d\n", ft_strncmp(str, "A", 2));
+//     printf("ABC: ACCD  = %d\n", ft_strncmp(str, "ACCD", 3));
+//     printf("ABC: AB    = %d\n", ft_strncmp(str, "AB", 2));
+//     printf("ABC: B     = %d\n", ft_strncmp(str, "B", 2));
+//     printf("ABC: A     = %d\n", ft_strncmp(str, "A", 2));
+//     return (0);
+// }

@@ -6,12 +6,11 @@
 /*   By: yshimoma <yshimoma@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/10 19:52:44 by yshimoma          #+#    #+#             */
-/*   Updated: 2023/01/10 20:02:52 by yshimoma         ###   ########.fr       */
+/*   Updated: 2023/01/15 13:56:16 by yshimoma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// #include <ctype.h>
-// #include <stdio.h>
+#include "libft.h"
 
 /*
 ** 引数cの文字が0x00～0x7Fの場合は0以外の値、それ以外の場合は0を返します。
@@ -24,6 +23,7 @@ int	ft_isascii(int c)
 		return (0);
 }
 
+// #include <stdio.h>
 // int	main(void)
 // {
 // 	printf("%d\n", isascii('a'));

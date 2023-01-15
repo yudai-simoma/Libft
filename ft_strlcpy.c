@@ -6,11 +6,11 @@
 /*   By: yshimoma <yshimoma@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 11:54:48 by yshimoma          #+#    #+#             */
-/*   Updated: 2023/01/13 18:39:39 by yshimoma         ###   ########.fr       */
+/*   Updated: 2023/01/15 13:55:30 by yshimoma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include "libft.h"
 
 /*
 ** 文字型配列 *dst に文字列 *src を先頭から n - 1 文字コピーします。

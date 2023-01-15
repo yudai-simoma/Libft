@@ -6,12 +6,11 @@
 /*   By: yshimoma <yshimoma@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/10 19:50:01 by yshimoma          #+#    #+#             */
-/*   Updated: 2023/01/10 19:52:33 by yshimoma         ###   ########.fr       */
+/*   Updated: 2023/01/15 13:56:20 by yshimoma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// #include <ctype.h>
-// #include <stdio.h>
+#include "libft.h"
 
 /*
 ** 引数c が英字であれば 0以外を返し、そうでなければ 0 を返す。
@@ -24,6 +23,7 @@ int	ft_isalpha(int c)
 		return (0);
 }
 
+// #include <stdio.h>
 // int	main(void)
 // {
 // 	printf("%d\n", isalpha('a'));
