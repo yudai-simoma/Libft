@@ -6,16 +6,14 @@
 /*   By: yshimoma <yshimoma@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/15 13:09:56 by yshimoma          #+#    #+#             */
-/*   Updated: 2023/01/15 15:45:12 by yshimoma         ###   ########.fr       */
+/*   Updated: 2023/01/16 15:33:40 by yshimoma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
-# include <string.h>
-# include <strings.h>
 # include <stdlib.h>
-# include <ctype.h>
+# include <limits.h>
 
 int		ft_atoi(const char *str);
 void	ft_bzero(void *s, size_t n);
