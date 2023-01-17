@@ -6,7 +6,7 @@
 /*   By: yshimoma <yshimoma@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/05 22:15:07 by yshimoma          #+#    #+#             */
-/*   Updated: 2023/01/15 19:34:32 by yshimoma         ###   ########.fr       */
+/*   Updated: 2023/01/17 11:25:23 by yshimoma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
 	size_t	i;
 
-	if (s1 == '\0')
+	if (s1 == (void *)0)
 		return (0);
 	i = 0;
 	while (((s1[i] != '\0') || (s2[i] != '\0')) && (i < n))

@@ -6,7 +6,7 @@
 /*   By: yshimoma <yshimoma@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/14 16:33:24 by yshimoma          #+#    #+#             */
-/*   Updated: 2023/01/16 18:22:26 by yshimoma         ###   ########.fr       */
+/*   Updated: 2023/01/17 11:24:43 by yshimoma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ static int	ft_err_check(const char *str)
 	int	i;
 
 	i = 0;
-	if (str == '\0')
+	if (str == (void *)0)
 		return (1);
 	while (str[i] != '\0' && (str[i] < '0' || str[i] > '9'))
 	{
