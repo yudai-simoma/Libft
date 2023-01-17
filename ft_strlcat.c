@@ -6,7 +6,7 @@
 /*   By: yshimoma <yshimoma@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 12:39:43 by yshimoma          #+#    #+#             */
-/*   Updated: 2023/01/15 17:42:51 by yshimoma         ###   ########.fr       */
+/*   Updated: 2023/01/16 20:13:52 by yshimoma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,42 @@
 // #include<string.h>
 // #include<stdio.h>
 // #include<stdlib.h>
-/*
-** 与えられた文字列の桁数を返す
-*/
+// /*
+// ** 与えられた文字列の桁数を返す
+// */
 // size_t	ft_strlen(const char *s)
 // {
 // 	size_t	i;
 
 // 	i = 0;
-// 	while (s != 0 && s[i] != '\0')
+// 	while (s[i] != '\0')
 // 		i++;
 // 	return (i);
 // }
+
+/*
+** 引数のエラーチェックをする
+*/
+static void	ft_err_check(char *dst, const char *src, size_t dstsize)
+{
+	if (src == NULL)
+		ft_strlen(NULL);
+	if (dst == NULL && dstsize != 0)
+		ft_strlen(NULL);
+}
+
+/*
+** 与えられた文字列の桁数を返すかつ、NULLでもsegmentation fault	を起こさない
+*/
+static size_t	ft_strlen_null(const char *s)
+{
+	size_t	i;
+
+	i = 0;
+	while (s != NULL && s[i] != '\0')
+		i++;
+	return (i);
+}
 
 /*
 ** 文字型配列destのうしろに文字列srcを連結します。
@@ -37,13 +61,14 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	size_t	j;
 	size_t	result_num;
 
+	ft_err_check(dst, src, dstsize);
 	if (src[0] == '\0')
 		return (0);
 	if (dstsize != 0)
-		result_num = ft_strlen(dst) + ft_strlen(src);
-	if (ft_strlen(dst) >= dstsize)
+		result_num = ft_strlen_null(dst) + ft_strlen(src);
+	if (ft_strlen_null(dst) >= dstsize)
 		return (ft_strlen(src) + dstsize);
-	i = ft_strlen(dst);
+	i = ft_strlen_null(dst);
 	j = 0;
 	while (i + 1 < dstsize && j < ft_strlen(src))
 	{
@@ -64,9 +89,9 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 // 	char *dst2 = calloc(100, sizeof(char));
 // 	char *dst3 = calloc(100, sizeof(char));
 
-// 	ft_strlcat(dst2, "hello", 100);
+// 	ft_strlcat(str1, NULL, 5);
 // 	printf("ft_strlcat : %s\n",dst2);
-// 	strlcat(dst3, "hello", 100);
+// 	strlcat(str1, NULL, 5);
 // 	printf("strlcat : %s\n",dst3);
 //     // printf("%lu\n", strlcat(str1, str2, 40));
 // 	// printf("%s\n", str1);
