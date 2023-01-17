@@ -6,7 +6,7 @@
 /*   By: yshimoma <yshimoma@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/10 19:52:44 by yshimoma          #+#    #+#             */
-/*   Updated: 2023/01/17 09:42:45 by yshimoma         ###   ########.fr       */
+/*   Updated: 2023/01/17 11:38:57 by yshimoma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 */
 int	ft_isascii(int c)
 {
-	if (0 <= c && c <= 0177)
+	if (c >= 0 && c <= 0177)
 		return (1);
 	else
 		return (0);
