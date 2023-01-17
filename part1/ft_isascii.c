@@ -1,23 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   ft_isascii.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yshimoma <yshimoma@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/10 20:03:19 by yshimoma          #+#    #+#             */
-/*   Updated: 2023/01/15 13:56:04 by yshimoma         ###   ########.fr       */
+/*   Created: 2023/01/10 19:52:44 by yshimoma          #+#    #+#             */
+/*   Updated: 2023/01/17 09:42:45 by yshimoma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /*
-** 引数c が数字であれば 0以外を返し、そうでなければ 0 を返す。
+** 引数cの文字が0x00～0x7Fの場合は0以外の値、それ以外の場合は0を返します。(8進数表現)
 */
-int	ft_isdigit(int c)
+int	ft_isascii(int c)
 {
-	if (48 <= c && c <= 57)
+	if (0 <= c && c <= 0177)
 		return (1);
 	else
 		return (0);
@@ -26,14 +26,14 @@ int	ft_isdigit(int c)
 // #include <stdio.h>
 // int	main(void)
 // {
-// 	printf("%d\n", isdigit('a'));
-// 	printf("%d\n", isdigit('='));
-// 	printf("%d\n", isdigit(3));
-// 	printf("%d\n\n", isdigit('9'));
+// 	printf("%d\n", isascii('a'));
+// 	printf("%d\n", isascii('='));
+// 	printf("%d\n", isascii(3));
+// 	printf("%d\n\n", isascii(0x80));
 
-// 	printf("%d\n", ft_isdigit('a'));
-// 	printf("%d\n", ft_isdigit('='));
-// 	printf("%d\n", ft_isdigit(3));
-// 	printf("%d\n", ft_isdigit('9'));
+// 	printf("%d\n", ft_isascii('a'));
+// 	printf("%d\n", ft_isascii('='));
+// 	printf("%d\n", ft_isascii(3));
+// 	printf("%d\n", ft_isascii(0x80));
 // 	return (0);
 // }

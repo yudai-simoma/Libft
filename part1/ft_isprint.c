@@ -6,7 +6,7 @@
 /*   By: yshimoma <yshimoma@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/10 20:06:59 by yshimoma          #+#    #+#             */
-/*   Updated: 2023/01/15 13:56:00 by yshimoma         ###   ########.fr       */
+/*   Updated: 2023/01/17 09:48:25 by yshimoma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 */
 int	ft_isprint(int c)
 {
-	if (32 <= c && c <= 126)
+	if (040 <= c && c <= 176)
 		return (1);
 	else
 		return (0);

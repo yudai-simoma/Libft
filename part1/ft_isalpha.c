@@ -1,23 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_isalpha.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yshimoma <yshimoma@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/10 19:30:09 by yshimoma          #+#    #+#             */
-/*   Updated: 2023/01/15 14:04:27 by yshimoma         ###   ########.fr       */
+/*   Created: 2023/01/10 19:50:01 by yshimoma          #+#    #+#             */
+/*   Updated: 2023/01/17 09:47:30 by yshimoma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /*
-** 引数c が英数字であれば 0以外を返し、そうでなければ 0 を返す。
+** 引数c が英字であれば 0以外を返し、そうでなければ 0 を返す。(8進数表現)
 */
-int	ft_isalnum(int c)
+int	ft_isalpha(int c)
 {
-	if ((48 <= c && c <= 57) || (65 <= c && c <= 90) || (97 <= c && c <= 122))
+	if ((101 <= c && c <= 132) || (141 <= c && c <= 172))
 		return (1);
 	else
 		return (0);
@@ -26,14 +26,14 @@ int	ft_isalnum(int c)
 // #include <stdio.h>
 // int	main(void)
 // {
-// 	printf("%d\n", isalnum('a'));
-// 	printf("%d\n", isalnum('='));
-// 	printf("%d\n", isalnum(3));
-// 	printf("%d\n\n", isalnum('9'));
+// 	printf("%d\n", isalpha('a'));
+// 	printf("%d\n", isalpha('='));
+// 	printf("%d\n", isalpha(3));
+// 	printf("%d\n\n", isalpha('9'));
 
-// 	printf("%d\n", ft_isalnum('a'));
-// 	printf("%d\n", ft_isalnum('='));
-// 	printf("%d\n", ft_isalnum(3));
-// 	printf("%d\n", ft_isalnum('9'));
+// 	printf("%d\n", ft_isalpha('a'));
+// 	printf("%d\n", ft_isalpha('='));
+// 	printf("%d\n", ft_isalpha(3));
+// 	printf("%d\n", ft_isalpha('9'));
 // 	return (0);
 // }

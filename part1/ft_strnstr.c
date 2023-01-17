@@ -6,7 +6,7 @@
 /*   By: yshimoma <yshimoma@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/11 20:52:17 by yshimoma          #+#    #+#             */
-/*   Updated: 2023/01/16 12:10:14 by yshimoma         ###   ########.fr       */
+/*   Updated: 2023/01/17 09:29:47 by yshimoma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,34 @@
 // 	size_t	i;
 
 // 	i = 0;
-// 	while (s != 0 && s[i] != '\0')
+// 	while (s[i] != '\0')
 // 		i++;
 // 	return (i);
 // }
+
+/*
+** 引数のエラーチェックをする
+*/
+static void	ft_err_check(const char *dst, const char *src, size_t dstsize)
+{
+	if (src == NULL)
+		ft_strlen(NULL);
+	if (dst == NULL && dstsize != 0)
+		ft_strlen(NULL);
+}
+
+/*
+** 与えられた文字列の桁数を返すかつ、NULLでもsegmentation fault	を起こさない
+*/
+static size_t	ft_strlen_null(const char *s)
+{
+	size_t	i;
+
+	i = 0;
+	while (s != NULL && s[i] != '\0')
+		i++;
+	return (i);
+}
 
 /*
 ** s1 の文字と s2 の文字が一致した場合、次の文字同士を比較する
@@ -60,9 +84,10 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	size_t	i;
 	size_t	j;
 
+	ft_err_check(haystack, needle, len);
 	if (ft_strlen(needle) == 0)
 		return ((char *)haystack);
-	if (ft_strlen(haystack) < ft_strlen(needle) || ft_strlen(needle) > len)
+	if (ft_strlen_null(haystack) < ft_strlen(needle) || ft_strlen(needle) > len)
 		return (0);
 	i = 0;
 	while (haystack[i] != '\0' && len)
@@ -72,14 +97,9 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 		{
 			if (ft_match_src(&haystack[i], &needle[j], len))
 				return ((char *)&haystack[i]);
-			len--;
-			i++;
 		}
-		else
-		{
-			len--;
-			i++;
-		}
+		len--;
+		i++;
 	}
 	return (0);
 }
@@ -114,14 +134,15 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 // 		// 2ASSERT_EQ_PTR(ft_strnstr(str, "libft-test-tokyo", i), strnstr(str, "libft-test-tokyo", i));
 // 		// printf("iが%dの時3：%s\n",i,strnstr(str, "libft", i));
 // 		// printf("iが%dの時3：%s\n\n",i,ft_strnstr(str, "libft", i));
-// 		printf("iが%dの時4：%s\n",i,strnstr(str, "test", i));
-// 		printf("iが%dの時4：%s\n\n",i,ft_strnstr(str, "test", i));
+// 		// printf("iが%dの時4：%s\n",i,strnstr(str, "test", i));
+// 		// printf("iが%dの時4：%s\n\n",i,ft_strnstr(str, "test", i));
 // 		// printf("iが%dの時5：%s\n",i,strnstr(str, "tokyo", i));
 // 		// printf("iが%dの時5：%s\n\n",i,ft_strnstr(str, "tokyo", i));
-// 		printf("iが%dの時6：%s\n",i,strnstr(str, "libft~", i));
-// 		printf("iが%dの時6：%s\n\n",i,ft_strnstr(str, "libft~", i));
+// 		// printf("iが%dの時6：%s\n",i,strnstr(str, "libft~", i));
+// 		// printf("iが%dの時6：%s\n\n",i,ft_strnstr(str, "libft~", i));
 // 		// 7ASSERT_EQ_PTR(ft_strnstr(str, "z", i), strnstr(str, "z", i));
 // 	}
-
+// 		printf("115の時：%s\n",strnstr(NULL, "1", 2));
+// 		printf("115の時：%s\n\n",ft_strnstr(NULL, "1", 2));
 // 	return (0);
 // }
