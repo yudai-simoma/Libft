@@ -6,7 +6,7 @@
 /*   By: yshimoma <yshimoma@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/14 11:27:37 by yshimoma          #+#    #+#             */
-/*   Updated: 2023/01/17 09:17:28 by yshimoma         ###   ########.fr       */
+/*   Updated: 2023/01/18 21:17:23 by yshimoma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 	const unsigned char	*cp_src;
 	size_t				i;
 
-	if (dst == NULL && src == NULL)
+	if (dst == src)
 		return (NULL);
 	cp_dst = (unsigned char *)dst;
 	cp_src = (const unsigned char *)src;
@@ -35,7 +35,6 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 	}
 	return (dst);
 }
-
 
 // int	main(void)
 // {
