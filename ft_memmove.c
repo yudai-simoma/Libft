@@ -6,7 +6,7 @@
 /*   By: yshimoma <yshimoma@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/14 12:09:34 by yshimoma          #+#    #+#             */
-/*   Updated: 2023/01/15 13:55:49 by yshimoma         ###   ########.fr       */
+/*   Updated: 2023/01/17 15:29:18 by yshimoma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	unsigned char		*cp_dst;
 	const unsigned char	*cp_src;
 
+	if (dst == src)
+		return (NULL);
 	cp_dst = (unsigned char *)dst;
 	cp_src = (const unsigned char *)src;
 	if (dst > src)

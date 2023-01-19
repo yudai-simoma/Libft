@@ -6,7 +6,11 @@
 /*   By: yshimoma <yshimoma@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/10 19:50:01 by yshimoma          #+#    #+#             */
+<<<<<<< HEAD:ft_isalpha.c
 /*   Updated: 2023/01/17 11:38:00 by yshimoma         ###   ########.fr       */
+=======
+/*   Updated: 2023/01/17 13:32:25 by yshimoma         ###   ########.fr       */
+>>>>>>> fba3c804819b2300c6ebc5946e14ad6f2d2114c9:part1/ft_isalpha.c
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +21,7 @@
 */
 int	ft_isalpha(int c)
 {
-	if ((101 <= c && c <= 132) || (141 <= c && c <= 172))
+	if ((c >= 0101 && c <= 0132) || (c >= 0141 && c <= 0172))
 		return (1);
 	else
 		return (0);
