@@ -6,7 +6,7 @@
 /*   By: yshimoma <yshimoma@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/15 13:09:56 by yshimoma          #+#    #+#             */
-/*   Updated: 2023/01/16 15:33:40 by yshimoma         ###   ########.fr       */
+/*   Updated: 2023/01/22 15:54:41 by yshimoma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,5 +38,6 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
 char	*ft_strrchr(const char *s, int c);
 int		ft_tolower(int c);
 int		ft_toupper(int c);
+char	*ft_substr(char const *s, unsigned int start, size_t len);
 
 #endif
