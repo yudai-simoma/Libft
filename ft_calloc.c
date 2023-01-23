@@ -6,7 +6,7 @@
 /*   By: yshimoma <yshimoma@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/14 17:21:32 by yshimoma          #+#    #+#             */
-/*   Updated: 2023/01/17 13:33:07 by yshimoma         ###   ########.fr       */
+/*   Updated: 2023/01/23 13:14:17 by yshimoma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,6 @@ void	*ft_calloc(size_t count, size_t size)
 	ft_memset(src, '\0', (size * count));
 	return ((void *)src);
 }
-
 
 // int	main(void)
 // {

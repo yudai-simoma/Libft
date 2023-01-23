@@ -6,7 +6,7 @@
 /*   By: yshimoma <yshimoma@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/11 20:22:56 by yshimoma          #+#    #+#             */
-/*   Updated: 2023/01/17 17:19:01 by yshimoma         ###   ########.fr       */
+/*   Updated: 2023/01/23 17:21:26 by yshimoma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ char	*ft_strrchr(const char *s, int c)
 	i = ft_strlen((char *)s);
 	while (i)
 	{
-		if (s[i - 1] == c)
+		if (s[i - 1] == (char)c)
 			return ((char *)&s[i - 1]);
 		i--;
 	}
