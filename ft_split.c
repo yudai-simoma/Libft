@@ -6,11 +6,49 @@
 /*   By: yshimoma <yshimoma@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 23:30:48 by shimomayuda       #+#    #+#             */
-/*   Updated: 2023/01/22 20:00:58 by yshimoma         ###   ########.fr       */
+/*   Updated: 2023/01/23 13:46:38 by yshimoma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+
+/*
+** メモリに指定バイト数分の値をセットすることができます。
+*/
+void	*ft_memset(void *b, int c, size_t len)
+{
+	unsigned char	*bb;
+	unsigned char	cc;
+	size_t			i;
+
+	bb = (unsigned char *)b;
+	cc = (unsigned char)c;
+	i = 0;
+	while (i < len)
+	{
+		*bb = cc;
+		bb++;
+		i++;
+	}
+	return (b);
+}
+
+/*
+** 指定バイト分メモリ領域をn個分確保する
+*/
+void	*ft_calloc(size_t count, size_t size)
+{
+	unsigned char	*src;
+
+	if (size > 0 && count > SIZE_MAX / size)
+		return (NULL);
+	src = (unsigned char *)malloc(size * count);
+	if (src == NULL)
+		return (NULL);
+	ft_memset(src, '\0', (size * count));
+	return ((void *)src);
+}
 
 /*
 ** 文字列の先頭から「文字」を検索して見つかった場所をポインタで返します。
@@ -166,6 +204,18 @@ char	*ft_strtrim(char const *s1, char const *set)
 }
 
 /*
+ * ft_strtrimの削除文字が文字列ではなく文字の場合の関数
+ */
+static char	*ft_strtrim_c(char const *s1, char c)
+{
+	char	set[2];
+
+	set[0] = c;
+	set[1] = '\0';
+	return (ft_strtrim(s1, set));
+}
+
+/*
  * 区切る個数を返す
  */
 static size_t	ft_split_num(char *trim_s, char c)
@@ -187,41 +237,77 @@ static size_t	ft_split_num(char *trim_s, char c)
 /*
  * s文字列の中で、startからlen分文字を抽出し、戻り値として返す。
  */
-char	**ft_split(char const *s, char c)
+static char	**ft_2_calloc(char *trim_s, char **return_src, char c)
 {
-	char	**return_src;
-	char	*trim_s;
-	char	*set;
 	size_t	malloc_size;
 	size_t	i;
 	size_t	j;
 
-	trim_s = ft_strtrim(s, (char const *)c);
-	return_src = (char **)malloc(sizeof(char *) * ft_split_num(trim_s, c));
 	malloc_size = 0;
 	i = 0;
-	while (s[i] != '\0')
+	j = 0;
+	while (trim_s[i] != '\0')
 	{
-		if (s[i] == c)
+		if (trim_s[i] == c)
 		{
-			*return_src = (char *)malloc(sizeof(char) * malloc_size + 1);
+			return_src[j] = (char *)calloc(malloc_size + 1, 1);
 			malloc_size = 0;
-		}
-		malloc_size++;
-		i++;
-	}
-	i = 0;
-	while (s[i] != '\0')
-	{
-		j = 0;
-		if (s[i] == c)
-		{
-			return_src[j][i] = s[i];
-			i++;
 			j++;
 		}
+		else
+			malloc_size++;
 		i++;
 	}
+	return_src[j] = (char *)calloc(malloc_size + 1, 1);
+	return (return_src);
+}
+
+/*
+ * s文字列の中で、startからlen分文字を抽出し、戻り値として返す。
+ */
+static char	**ft_split_set(char *trim_s, char **return_src, char c)
+{
+	size_t	i;
+	size_t	j;
+	size_t	k;
+
+	i = 0;
+	j = 0;
+	k = 0;
+	while (trim_s[i] != '\0')
+	{
+		if (trim_s[i] != c)
+		{
+			return_src[j][k] = trim_s[i];
+			i++;
+			k++;
+		}
+		else
+		{
+			i++;
+			j++;
+			k = 0;
+		}
+	}
+	return (return_src);
+}
+
+/*
+ * s文字列の中で、startからlen分文字を抽出し、戻り値として返す。
+ */
+char	**ft_split(char const *s, char c)
+{
+	char	**return_src;
+	char	*trim_s;
+
+	if (s[0] == '\0')
+		return (NULL);
+	if (s[0] == '\0' && c == '\0')
+		return (NULL);
+	trim_s = ft_strtrim_c(s, c);
+	return_src = (char **)malloc(sizeof(char *) * ft_split_num(trim_s, c));
+	return_src = ft_2_calloc(trim_s, return_src, c);
+	return_src = ft_split_set(trim_s, return_src, c);
 	return (return_src);
 }
 
@@ -230,10 +316,11 @@ int	main(void)
 {
 	char **src;
 
-	src = ft_split("@abc@def@ghi@", '@');
+	src = ft_split("\0", '@');
 	for (int i = 0; i < 3; i++)
 	{
-		printf("%s\n", src[i]);
+		if (src == '\0')
+			printf("%s\n", src[i]);
 	}
 	return (0);
 }
