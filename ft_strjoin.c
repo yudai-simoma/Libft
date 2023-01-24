@@ -6,24 +6,24 @@
 /*   By: yshimoma <yshimoma@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 12:54:22 by yshimoma          #+#    #+#             */
-/*   Updated: 2023/01/17 13:42:45 by yshimoma         ###   ########.fr       */
+/*   Updated: 2023/01/24 11:46:01 by yshimoma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/*
-** 与えられた文字列の桁数を返す
-*/
-size_t	ft_strlen(const char *s)
-{
-	size_t	i;
+// /*
+// ** 与えられた文字列の桁数を返す
+// */
+// size_t	ft_strlen(const char *s)
+// {
+// 	size_t	i;
 
-	i = 0;
-	while (s[i] != '\0')
-		i++;
-	return (i);
-}
+// 	i = 0;
+// 	while (s[i] != '\0')
+// 		i++;
+// 	return (i);
+// }
 
 /*
  *s1とs2の文字列を結合し、戻り値として返す
@@ -55,14 +55,14 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	return (return_src);
 }
 
-#include <stdio.h>
-int	main(void)
-{
-	char *a = "abdcdefg";
-	char *b = "123456";
-	char *c;
+// #include <stdio.h>
+// int	main(void)
+// {
+// 	char *a = "abdcdefg";
+// 	char *b = "123456";
+// 	char *c;
 
-	c = ft_strjoin(a,b);
-	printf("%s", c);
-	return (0);
-}
+// 	c = ft_strjoin(a,b);
+// 	printf("%s", c);
+// 	return (0);
+// }

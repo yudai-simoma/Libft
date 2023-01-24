@@ -6,92 +6,92 @@
 /*   By: yshimoma <yshimoma@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 23:32:13 by shimomayuda       #+#    #+#             */
-/*   Updated: 2023/01/23 16:25:29 by yshimoma         ###   ########.fr       */
+/*   Updated: 2023/01/24 11:50:38 by yshimoma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 
-/*
-** 与えられた文字列の桁数を返す
-*/
-size_t	ft_strlen(const char *s)
-{
-	size_t	i;
+// /*
+// ** 与えられた文字列の桁数を返す
+// */
+// size_t	ft_strlen(const char *s)
+// {
+// 	size_t	i;
 
-	i = 0;
-	while (s[i] != '\0')
-		i++;
-	return (i);
-}
+// 	i = 0;
+// 	while (s[i] != '\0')
+// 		i++;
+// 	return (i);
+// }
 
-/*
- *s1とs2の文字列を結合し、戻り値として返す
- */
-char	*ft_strjoin(char const *s1, char const *s2)
-{
-	char	*return_src;
-	size_t	malloc_size;
-	size_t	i;
+// /*
+//  *s1とs2の文字列を結合し、戻り値として返す
+//  */
+// char	*ft_strjoin(char const *s1, char const *s2)
+// {
+// 	char	*return_src;
+// 	size_t	malloc_size;
+// 	size_t	i;
 
-	malloc_size = ft_strlen(s1) + ft_strlen(s2);
-	return_src = (char *)malloc(sizeof(char) * (malloc_size + 1));
-	if (return_src == NULL)
-		return (NULL);
-	i = 0;
-	while (*s1 != '\0')
-	{
-		return_src[i] = *s1;
-		i++;
-		s1++;
-	}
-	while (*s2 != '\0')
-	{
-		return_src[i] = *s2;
-		i++;
-		s2++;
-	}
-	return_src[i] = '\0';
-	return (return_src);
-}
+// 	malloc_size = ft_strlen(s1) + ft_strlen(s2);
+// 	return_src = (char *)malloc(sizeof(char) * (malloc_size + 1));
+// 	if (return_src == NULL)
+// 		return (NULL);
+// 	i = 0;
+// 	while (*s1 != '\0')
+// 	{
+// 		return_src[i] = *s1;
+// 		i++;
+// 		s1++;
+// 	}
+// 	while (*s2 != '\0')
+// 	{
+// 		return_src[i] = *s2;
+// 		i++;
+// 		s2++;
+// 	}
+// 	return_src[i] = '\0';
+// 	return (return_src);
+// }
 
-/*
-** メモリに指定バイト数分の値をセットすることができます。
-*/
-void	*ft_memset(void *b, int c, size_t len)
-{
-	unsigned char	*bb;
-	unsigned char	cc;
-	size_t			i;
+// /*
+// ** メモリに指定バイト数分の値をセットすることができます。
+// */
+// void	*ft_memset(void *b, int c, size_t len)
+// {
+// 	unsigned char	*bb;
+// 	unsigned char	cc;
+// 	size_t			i;
 
-	bb = (unsigned char *)b;
-	cc = (unsigned char)c;
-	i = 0;
-	while (i < len)
-	{
-		*bb = cc;
-		bb++;
-		i++;
-	}
-	return (b);
-}
+// 	bb = (unsigned char *)b;
+// 	cc = (unsigned char)c;
+// 	i = 0;
+// 	while (i < len)
+// 	{
+// 		*bb = cc;
+// 		bb++;
+// 		i++;
+// 	}
+// 	return (b);
+// }
 
-/*
-** 指定バイト分メモリ領域をn個分確保する
-*/
-void	*ft_calloc(size_t count, size_t size)
-{
-	unsigned char	*src;
+// /*
+// ** 指定バイト分メモリ領域をn個分確保する
+// */
+// void	*ft_calloc(size_t count, size_t size)
+// {
+// 	unsigned char	*src;
 
-	if (size > 0 && count > SIZE_MAX / size)
-		return (NULL);
-	src = (unsigned char *)malloc(size * count);
-	if (src == NULL)
-		return (NULL);
-	ft_memset(src, '\0', (size * count));
-	return ((void *)src);
-}
+// 	if (size > 0 && count > SIZE_MAX / size)
+// 		return (NULL);
+// 	src = (unsigned char *)malloc(size * count);
+// 	if (src == NULL)
+// 		return (NULL);
+// 	ft_memset(src, '\0', (size * count));
+// 	return ((void *)src);
+// }
 
 /*
  * 数値が何桁か判断する関数
@@ -150,7 +150,7 @@ static void	ft_rev_str_tab(char *str, size_t size)
 /*
  * 数値を文字列に格納する
  */
-static char *ft_set_itoa(char *return_str, long nn, size_t size, size_t i)
+static char	*ft_set_itoa(char *return_str, long nn, size_t size, size_t i)
 {
 	while (i < size)
 	{
@@ -192,12 +192,12 @@ char	*ft_itoa(int n)
 	return (return_str);
 }
 
-#include <stdio.h>
-int	main(void)
-{
-	printf("%s\n", ft_itoa(42));
-	printf("%s\n", ft_itoa(0));
-	printf("%s\n", ft_itoa(2147483647));
-	printf("%s\n", ft_itoa(-2147483648));
-	return (0);
-}
+// #include <stdio.h>
+// int	main(void)
+// {
+// 	printf("%s\n", ft_itoa(42));
+// 	printf("%s\n", ft_itoa(0));
+// 	printf("%s\n", ft_itoa(2147483647));
+// 	printf("%s\n", ft_itoa(-2147483648));
+// 	return (0);
+// }

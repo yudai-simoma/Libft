@@ -6,11 +6,7 @@
 /*   By: yshimoma <yshimoma@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/10 19:50:01 by yshimoma          #+#    #+#             */
-<<<<<<< HEAD:ft_isalpha.c
-/*   Updated: 2023/01/17 11:38:00 by yshimoma         ###   ########.fr       */
-=======
-/*   Updated: 2023/01/17 13:32:25 by yshimoma         ###   ########.fr       */
->>>>>>> fba3c804819b2300c6ebc5946e14ad6f2d2114c9:part1/ft_isalpha.c
+/*   Updated: 2023/01/24 11:59:56 by yshimoma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

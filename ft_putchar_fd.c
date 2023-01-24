@@ -6,7 +6,7 @@
 /*   By: yshimoma <yshimoma@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 23:38:59 by shimomayuda       #+#    #+#             */
-/*   Updated: 2023/01/23 18:04:50 by yshimoma         ###   ########.fr       */
+/*   Updated: 2023/01/24 11:56:19 by yshimoma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	ft_putchar_fd(char c, int fd)
 	write(fd, &c, 1);
 }
 
-int	main(void)
-{
-	ft_putchar_fd('a', 1);
-}
+// int	main(void)
+// {
+// 	ft_putchar_fd('a', 1);
+// }
