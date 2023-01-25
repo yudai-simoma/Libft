@@ -6,7 +6,7 @@
 /*   By: yshimoma <yshimoma@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/11 20:22:56 by yshimoma          #+#    #+#             */
-/*   Updated: 2023/01/23 17:21:26 by yshimoma         ###   ########.fr       */
+/*   Updated: 2023/01/25 22:44:25 by yshimoma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,6 @@ char	*ft_strrchr(const char *s, int c)
 {
 	int	i;
 
-	if (c == 0)
-		return ("\0");
-	if (c > 255)
-		c -= 256;
-	if (c < 0)
-		c += 256;
 	i = ft_strlen((char *)s);
 	while (i)
 	{
@@ -32,7 +26,9 @@ char	*ft_strrchr(const char *s, int c)
 			return ((char *)&s[i - 1]);
 		i--;
 	}
-	return (0);
+	if (c == 0)
+		return ((char *)&s[i - 1]);
+	return (NULL);
 }
 
 // #include <stdio.h>
