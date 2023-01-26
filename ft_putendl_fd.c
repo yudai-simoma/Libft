@@ -6,7 +6,7 @@
 /*   By: yshimoma <yshimoma@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 23:34:02 by shimomayuda       #+#    #+#             */
-/*   Updated: 2023/01/24 11:56:53 by yshimoma         ###   ########.fr       */
+/*   Updated: 2023/01/26 19:57:09 by yshimoma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ void	ft_putendl_fd(char *s, int fd)
 {
 	size_t	i;
 
+	if (s == NULL)
+		return ((void)0);
 	if (fd < 0)
 		return ((void)0);
 	i = 0;

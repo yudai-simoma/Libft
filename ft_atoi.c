@@ -6,14 +6,11 @@
 /*   By: yshimoma <yshimoma@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/14 16:33:24 by yshimoma          #+#    #+#             */
-/*   Updated: 2023/01/17 11:24:43 by yshimoma         ###   ########.fr       */
+/*   Updated: 2023/01/26 19:14:13 by yshimoma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-// #include <stdio.h>
-// #include <stdlib.h>
-// #include <limits.h>
 
 // /*
 // ** 与えられた文字列の桁数を返す
@@ -65,9 +62,10 @@ static int	ft_err_check(const char *str)
 {
 	int	i;
 
+	while ((*str != '\0')
+		&& ((*str >= 9 && *str <= 13) || (*str == 32)))
+		str++;
 	i = 0;
-	if (str == (void *)0)
-		return (1);
 	while (str[i] != '\0' && (str[i] < '0' || str[i] > '9'))
 	{
 		if ((str[i] != '-' && str[i] != '+') && (str[i] < '0' || str[i] > '9'))
@@ -87,7 +85,9 @@ static int	ft_sign_check(const char *str)
 	int	sign;
 
 	sign = 0;
-	while ((*str != '\0') && ((*str == '+' || *str == '-') || (*str == '0')))
+	while ((*str != '\0')
+		&& (((*str == '+' || *str == '-') || (*str == '0'))
+			|| ((*str >= 9 && *str <= 13) || (*str == 32))))
 	{
 		if (*str == '-')
 			sign++;
@@ -114,7 +114,8 @@ int	ft_atoi(const char *str)
 	else if (ft_max_check(str, sign) == 2)
 		return ((int)LONG_MIN);
 	while ((*str != '\0')
-		&& ((*str == '+' || *str == '-') || (*str == '0')))
+		&& (((*str == '+' || *str == '-') || (*str == '0'))
+			|| ((*str >= 9 && *str <= 13) || (*str == 32))))
 		str++;
 	while ((*str != '\0') && (*str >= '0' && *str <= '9'))
 	{
@@ -127,6 +128,9 @@ int	ft_atoi(const char *str)
 	return (result_num);
 }
 
+// #include <stdio.h>
+// #include <stdlib.h>
+// #include <limits.h>
 // int	main(void)
 // {
 // 	// printf("%d\n",atoi("12345"));
@@ -154,22 +158,27 @@ int	ft_atoi(const char *str)
 // 	// printf("%d\n",ft_atoi("+-123aa456"));
 // 	// printf("%d\n",ft_atoi("+123aa456"));
 
-// 	printf("22. %d\n",atoi("18446744073709551615"));	//ULONG_MAX + 1
-// 	printf("22. %d\n\n",ft_atoi("18446744073709551615"));
-// 	printf("23. %d\n",atoi("18446744073709551615"));	//SIZE_MAX + 1
-// 	printf("23. %d\n\n",ft_atoi("18446744073709551615"));
+// 	// printf("22. %d\n",atoi("18446744073709551615"));	//ULONG_MAX + 1
+// 	// printf("22. %d\n\n",ft_atoi("18446744073709551615"));
+// 	// printf("23. %d\n",atoi("18446744073709551615"));	//SIZE_MAX + 1
+// 	// printf("23. %d\n\n",ft_atoi("18446744073709551615"));
 
-// 	printf("27. %d\n",atoi("9223372036854775808"));	//LONG_MAX + 1
-// 	printf("27. %d\n\n",ft_atoi("9223372036854775808"));
-// 	printf("28. %d\n",atoi("-9223372036854775809"));	//LONG_MIN - 1
-// 	printf("28. %d\n\n",ft_atoi("-9223372036854775809"));
-// 	printf("29. %d\n",atoi("18446744073709551616")); //ULONG_MAX + 1
-// 	printf("29. %d\n\n",ft_atoi("18446744073709551616"));
-// 	printf("30. %d\n",atoi("18446744073709551616")); //SIZE_MAX + 1
-// 	printf("30. %d\n\n",ft_atoi("18446744073709551616"));
+// 	// printf("27. %d\n",atoi("9223372036854775808"));	//LONG_MAX + 1
+// 	// printf("27. %d\n\n",ft_atoi("9223372036854775808"));
+// 	// printf("28. %d\n",atoi("-9223372036854775809"));	//LONG_MIN - 1
+// 	// printf("28. %d\n\n",ft_atoi("-9223372036854775809"));
+// 	// printf("29. %d\n",atoi("18446744073709551616")); //ULONG_MAX + 1
+// 	// printf("29. %d\n\n",ft_atoi("18446744073709551616"));
+// 	// printf("30. %d\n",atoi("18446744073709551616")); //SIZE_MAX + 1
+// 	// printf("30. %d\n\n",ft_atoi("18446744073709551616"));
 
-// 	printf("36. %d\n",atoi("18446744073709551614")); //ULONG_MAX - 1
-// 	printf("36. %d\n\n",ft_atoi("18446744073709551614"));
-// 	printf("37. %d\n",atoi("18446744073709551614")); //SIZE_MAX - 1
-// 	printf("37. %d\n\n",ft_atoi("18446744073709551614"));
+// 	// printf("36. %d\n",atoi("18446744073709551614")); //ULONG_MAX - 1
+// 	// printf("36. %d\n\n",ft_atoi("18446744073709551614"));
+// 	// printf("37. %d\n",atoi("18446744073709551614")); //SIZE_MAX - 1
+// 	// printf("37. %d\n\n",ft_atoi("18446744073709551614"));
+
+// 	// printf("test2. %d\n",atoi("\t\v\f\r\n \f-06050"));
+// 	// printf("test2. %d\n\n",ft_atoi("\t\v\f\r\n \f-06050"));
+// 	// printf("test2. %d\n",atoi((void *)0));
+// 	printf("test2. %d\n\n",ft_atoi((void *)0));
 // }

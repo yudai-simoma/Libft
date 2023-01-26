@@ -6,7 +6,7 @@
 /*   By: yshimoma <yshimoma@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 13:52:03 by yshimoma          #+#    #+#             */
-/*   Updated: 2023/01/24 15:50:20 by yshimoma         ###   ########.fr       */
+/*   Updated: 2023/01/26 19:52:25 by yshimoma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -156,6 +156,10 @@ char	*ft_strtrim(char const *s1, char const *set)
 	size_t	trim_len;
 	char	*return_src;
 
+	if (s1 == NULL)
+		return (NULL);
+	else if (set == NULL)
+		return ((char *)s1);
 	start_num = ft_start_num(s1, set);
 	trim_len = ft_trim_len(s1, set, start_num);
 	return_src = ft_substr((const char *)s1, (unsigned int)start_num, trim_len);
@@ -169,18 +173,18 @@ char	*ft_strtrim(char const *s1, char const *set)
 // 	char const *set = "world";
 // 	//全部
 
-// 	printf("%s", ft_strtrim(s1, set));
+// 	printf("%s", ft_strtrim(s1, NULL));
 
 // 	// /* 1 */ ASSERT_EQ_STR(ft_strtrim("hello world", "world"), "hello ");
 // 	// /* 2 */ ASSERT_EQ_STR(ft_strtrim("hello world", "hello"), " world");
 // 	// /* 5 */ ASSERT_EQ_STR(ft_strtrim("    hello world     ", " ")
-	////, "hello world");
+// 	//, "hello world");
 // 	// /* 6 */ ASSERT_EQ_STR(ft_strtrim(" \n\t\r    hello \n\t\r world     
-////\r\t\n\t \r\n", " \n\t\r"), "hello \n\t\r world");
+// //\r\t\n\t \r\n", " \n\t\r"), "hello \n\t\r world");
 
 // 	// /* 3 */ ASSERT_EQ_STR(ft_strtrim("hello world", ""), "hello world");
 // 	// /* 4 */ ASSERT_EQ_STR(ft_strtrim("", ""), "");
 // 	// /* 7 */ ASSERT_EQ_STR(ft_strtrim("hello world"
-////, "abcdefghijklmnopqrstuvwxyz"), " ");
+// //, "abcdefghijklmnopqrstuvwxyz"), " ");
 // 	return (0);
 // }

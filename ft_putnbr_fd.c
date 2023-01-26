@@ -6,7 +6,7 @@
 /*   By: yshimoma <yshimoma@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 23:35:07 by shimomayuda       #+#    #+#             */
-/*   Updated: 2023/01/24 20:07:34 by yshimoma         ###   ########.fr       */
+/*   Updated: 2023/01/26 20:18:46 by yshimoma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,15 +33,28 @@ static void	ft_putnbr(unsigned int nn, long break_num, int fd)
 		ft_putchar_fd((nn % 10) + '0', fd);
 }
 
+/*
+** 数値を大きい位から一つづつ、出力関数に渡す
+** 10の位が0の時のみ例外処理をしている
+*/
 static void	ft_putnbr_fd_add(long n_len, long nn, long break_num, int fd)
 {
 	while (n_len)
 	{
-		if (nn > 9)
+		if (n_len != 1)
 		{
-			ft_putnbr(nn, break_num / 10, fd);
-			break_num /= 10;
-			nn -= (break_num * (nn / break_num));
+			if (nn > 9)
+			{
+				ft_putnbr(nn, break_num / 10, fd);
+				break_num /= 10;
+				nn -= (break_num * (nn / break_num));
+			}
+			else
+			{
+				ft_putnbr(0, break_num / 10, fd);
+				break_num /= 10;
+				nn -= (break_num * (nn / break_num));
+			}
 		}
 		else
 		{
@@ -86,15 +99,15 @@ void	ft_putnbr_fd(int n, int fd)
 
 // int	main(void)
 // {
-// 	ft_putnbr_fd(123456, 1);
+// 	ft_putnbr_fd(5058907, 1);
 // 	write(1, "\n", 1);
-// 	ft_putnbr_fd(0, 1);
-// 	write(1, "\n", 1);
-// 	ft_putnbr_fd(2147483647, 1);
-// 	write(1, "\n", 1);
-// 	ft_putnbr_fd(-2147483648, 1);
-// 	write(1, "\n", 1);
-// 	ft_putnbr_fd(123456, -1);
-// 	write(1, "\n", 1);
+// 	// ft_putnbr_fd(0, 1);
+// 	// write(1, "\n", 1);
+// 	// ft_putnbr_fd(2147483647, 1);
+// 	// write(1, "\n", 1);
+// 	// ft_putnbr_fd(-2147483648, 1);
+// 	// write(1, "\n", 1);
+// 	// ft_putnbr_fd(123456, -1);
+// 	// write(1, "\n", 1);
 // 	return (0);
 // }
