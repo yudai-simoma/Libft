@@ -6,7 +6,7 @@
 /*   By: yshimoma <yshimoma@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 11:43:57 by yshimoma          #+#    #+#             */
-/*   Updated: 2023/01/24 12:30:24 by yshimoma         ###   ########.fr       */
+/*   Updated: 2023/01/27 22:05:58 by yshimoma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,32 +28,38 @@
 /*
  * エラーチェック
  */
-static int	ft_err_check(char const *s, unsigned int start, size_t len)
+static int	ft_err_check(char const *s, unsigned int start)
 {
 	if (s == NULL)
 		return (1);
-	if ((ft_strlen(s) <= (size_t)start) || (len == 0))
+	if (ft_strlen(s) <= (size_t)start)
 		return (2);
 	return (0);
 }
 
 /*
- * s文字列の中で、startからlen分文字を抽出し、戻り値として返す。
+ * s文字列の中で、startから最大len分文字を抽出し、戻り値として返す。
+ "abcdefghijklmn",3,20    defg
  */
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*return_str;
+	size_t	malloc_size;
 	size_t	i;
 
-	if (ft_err_check(s, start, len) == 1)
+	if (ft_err_check(s, start) == 1)
 		return (NULL);
-	else if (ft_err_check(s, start, len) == 2)
-		return ((char *)malloc(sizeof(char) * 1));
-	return_str = (char *)malloc(sizeof(char) * (len + 1));
+	else if (ft_err_check(s, start) == 2)
+		len = 0;
+	if (ft_strlen(s) <= len)
+		malloc_size = ft_strlen(s) - (size_t)start;
+	else
+		malloc_size = len;
+	return_str = (char *)malloc(sizeof(char) * (malloc_size + 1));
 	if (return_str == NULL)
 		return (NULL);
 	i = 0;
-	while (i < len)
+	while (i < malloc_size)
 	{
 		return_str[i] = s[start + i];
 		i++;
@@ -68,8 +74,11 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 // 	char *s = "libft-test-tokyo";
 // 	char *str;
 
-// 	str = ft_substr(s,20,100);
+// 	// str = ft_substr(s,20,100);
+// 	str = ft_substr("tripouille", 100, 1);
+// 	// str = ft_substr("42", 0, 0);
 // 	printf("%s\n", str);
+// 	printf("%zu", ft_strlen(str));
 // 	free(str);
 
 // 	// /* 5 */ ASSERT_EQ_STR(ft_substr(s, 20, 100), "");
@@ -88,5 +97,6 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 // 	// /* 13 */ ASSERT_EQ_STR(ft_substr(s, 10, 0), "");
 // 	// /* 14 */ ASSERT_EQ_STR(ft_substr(s, 15, 0), "");
 // 	// /* 15 */ ASSERT_EQ_STR(ft_substr(s, 20, 0), "");
+
 // 	return (0);
 // }

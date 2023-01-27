@@ -6,7 +6,7 @@
 /*   By: yshimoma <yshimoma@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 23:30:48 by shimomayuda       #+#    #+#             */
-/*   Updated: 2023/01/26 20:56:41 by yshimoma         ###   ########.fr       */
+/*   Updated: 2023/01/27 20:22:15 by yshimoma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ static char	**ft_free(char **split_s, size_t j)
 {
 	size_t	i;
 
+	i = 0;
 	while (i < j)
 	{
 		free(split_s[i]);
@@ -65,25 +66,29 @@ static char	*ft_add_s(char const *s, char c)
 /*
 ** 1次元目の配列の要素数を返す
 */
-static size_t	ft_array_size(char const *s, char c)
+static char	**ft_array_malloc(char const *s, char c)
 {
-	int	i;
-	int	flg;
-	int	return_size;
+	size_t	i;
+	size_t	flg;
+	size_t	array_size;
+	char	**return_str;
 
+	if (s == NULL)
+		return (NULL);
 	i = 0;
 	flg = 0;
-	return_size = 0;
+	array_size = 0;
 	while (s[i] != '\0')
 	{
 		while (s[i] != '\0' && charset_jud(s[i], c) == 0)
 			i++;
 		if (s[i] != '\0')
-			return_size++;
+			array_size++;
 		while (s[i] != '\0' && charset_jud(s[i], c) == 1)
 			i++;
 	}
-	return (return_size);
+	return_str = (char **)malloc(sizeof(char *) * (array_size + 1));
+	return (return_str);
 }
 
 /*
@@ -92,12 +97,10 @@ static size_t	ft_array_size(char const *s, char c)
 char	**ft_split(char const *s, char c)
 {
 	char	**split_s;
-	size_t	array_size;
 	size_t	i;
 	size_t	j;
 
-	array_size = ft_array_size(s, c);
-	split_s = (char **)malloc(sizeof(char *) * (array_size + 1));
+	split_s = ft_array_malloc(s, c);
 	if (split_s == NULL)
 		return (NULL);
 	i = 0;
@@ -120,17 +123,18 @@ char	**ft_split(char const *s, char c)
 	return (split_s);
 }
 
-#include <stdio.h>
-int	main(void)
-{
-	char **src;
+// #include <stdio.h>
+// int	main(void)
+// {
+// 	char **src;
 
-	src = ft_split("      split       this for   me  !       ", ' ');
-	// src = ft_split("hello,world,42,tokyo", ',');
-	for (int i = 0; i < 6; i++)
-	{
-		// if (src == '\0')
-			printf("%s\n", src[i]);
-	}
-	return (0);
-}
+// 	// src = ft_split("      split       this for   me  !       ", ' ');
+// 	src = ft_split("abdc def dfa  sfs", '\0');
+// 	// src = ft_split("hello,world,42,tokyo", ',');
+// 	// for (int i = 0; i < 6; i++)
+// 	// {
+// 	// 	// if (src == '\0')
+// 	// 		printf("%s\n", src[i]);
+// 	// }
+// 	return (0);
+// }

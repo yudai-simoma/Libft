@@ -6,14 +6,12 @@
 /*   By: yshimoma <yshimoma@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 12:39:43 by yshimoma          #+#    #+#             */
-/*   Updated: 2023/01/16 20:13:52 by yshimoma         ###   ########.fr       */
+/*   Updated: 2023/01/27 21:03:30 by yshimoma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-// #include<string.h>
-// #include<stdio.h>
-// #include<stdlib.h>
+
 // /*
 // ** 与えられた文字列の桁数を返す
 // */
@@ -27,16 +25,16 @@
 // 	return (i);
 // }
 
-/*
-** 引数のエラーチェックをする
-*/
-static void	ft_err_check(char *dst, const char *src, size_t dstsize)
-{
-	if (src == NULL)
-		ft_strlen(NULL);
-	if (dst == NULL && dstsize != 0)
-		ft_strlen(NULL);
-}
+// /*
+// ** 引数のエラーチェックをする
+// */
+// static void	ft_err_check(char *dst, const char *src, size_t dstsize)
+// {
+// 	if (src == NULL)
+// 		ft_strlen(NULL);
+// 	if (dst == NULL && dstsize != 0)
+// 		ft_strlen(NULL);
+// }
 
 /*
 ** 与えられた文字列の桁数を返すかつ、NULLでもsegmentation fault	を起こさない
@@ -61,9 +59,8 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	size_t	j;
 	size_t	result_num;
 
-	ft_err_check(dst, src, dstsize);
-	if (src[0] == '\0')
-		return (0);
+	if (dst == NULL && dstsize != 0)
+		ft_strlen(NULL);
 	if (dstsize != 0)
 		result_num = ft_strlen_null(dst) + ft_strlen(src);
 	if (ft_strlen_null(dst) >= dstsize)
@@ -80,19 +77,23 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	return (result_num);
 }
 
+// #include<string.h>
+// #include<stdio.h>
+// #include<stdlib.h>
 // int	main(void)
 // {
-//     char str1[50] = "ABCDEF123456789";
-//     const char str2[] = "123";
-//     char str3[50] = "ABCDEF123456789";
-//     const char str4[] = "123";
-// 	char *dst2 = calloc(100, sizeof(char));
-// 	char *dst3 = calloc(100, sizeof(char));
+//     // char str1[50] = "ABCDEF123456789";
+//     // const char str2[] = "123";
+//     // char str3[50] = "ABCDEF123456789";
+//     // const char str4[] = "123";
+// 	// char *dst2 = calloc(100, sizeof(char));
+// 	// char *dst3 = calloc(100, sizeof(char));
 
-// 	ft_strlcat(str1, NULL, 5);
-// 	printf("ft_strlcat : %s\n",dst2);
-// 	strlcat(str1, NULL, 5);
-// 	printf("strlcat : %s\n",dst3);
+// 	// ft_strlcat(str1, NULL, 5);
+// 	// printf("ft_strlcat : %s\n",dst2);
+// 	// strlcat(str1, NULL, 5);
+// 	// printf("strlcat : %s\n",dst3);
+
 //     // printf("%lu\n", strlcat(str1, str2, 40));
 // 	// printf("%s\n", str1);
 //     // printf("%lu\n", strlcat(str1, str2, 21));
@@ -102,5 +103,16 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 //     // printf("%s\n", str3);
 // 	// printf("%zu\n", ft_strlcat(str3, str4, 21));
 // 	// printf("%s\n", str3);
+
+// 	char dest[30]; 
+// 	memset(dest, 0, 30); 
+// 	memset(dest, '1', 10);
+// 	char dest1[30]; 
+// 	memset(dest1, 0, 30); 
+// 	memset(dest1, '1', 10);
+// 	printf("strlcat : %lu\n", strlcat(dest, "", 15));
+// 	printf("%s\n", dest);
+// 	printf("ft_strlcat : %lu\n", ft_strlcat(dest1, "", 15));
+// 	printf("%s\n", dest1);
 //     return (0);
 // }
