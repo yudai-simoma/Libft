@@ -6,12 +6,11 @@
 /*   By: yshimoma <yshimoma@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 23:32:13 by shimomayuda       #+#    #+#             */
-/*   Updated: 2023/01/24 11:50:38 by yshimoma         ###   ########.fr       */
+/*   Updated: 2023/01/28 19:32:58 by yshimoma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
 
 // /*
 // ** 与えられた文字列の桁数を返す
@@ -150,8 +149,16 @@ static void	ft_rev_str_tab(char *str, size_t size)
 /*
  * 数値を文字列に格納する
  */
-static char	*ft_set_itoa(char *return_str, long nn, size_t size, size_t i)
+static char	*ft_set_itoa(char *return_str, long nn, size_t size, char sign)
 {
+	size_t	i;
+
+	if (sign == '-')
+	{
+		size -= 1;
+		return_str[size] = '-';
+	}
+	i = 0;
 	while (i < size)
 	{
 		return_str[i] = (nn % 10) + '0';
@@ -170,34 +177,32 @@ char	*ft_itoa(int n)
 	long	nn;
 	char	sign;
 	size_t	malloc_size;
-	size_t	i;
 
 	nn = (long)n;
 	malloc_size = ft_malloc_size(nn);
-	return_str = ft_calloc(malloc_size + 1, 1);
+	return_str = (char *)ft_calloc(malloc_size + 1, 1);
 	if (return_str == NULL)
 		return (NULL);
-	i = 0;
 	sign = '+';
 	if (nn < 0)
 	{
 		nn *= -1;
-		i = 1;
 		sign = '-';
 	}
-	return_str = ft_set_itoa(return_str, nn, malloc_size, i);
+	return_str = ft_set_itoa(return_str, nn, malloc_size, sign);
 	ft_rev_str_tab(return_str, malloc_size);
-	if (sign == '-')
-		return_str = ft_strjoin((char const *)"-", (char const *)return_str);
 	return (return_str);
 }
 
 // #include <stdio.h>
 // int	main(void)
 // {
-// 	printf("%s\n", ft_itoa(42));
-// 	printf("%s\n", ft_itoa(0));
-// 	printf("%s\n", ft_itoa(2147483647));
-// 	printf("%s\n", ft_itoa(-2147483648));
+// 	printf("%s\n", ft_itoa(9));
+// 	printf("%s\n", ft_itoa(10));
+// 	printf("%s\n", ft_itoa(11));
+// 	printf("%s\n", ft_itoa(20));
+// 	// printf("%s\n", ft_itoa(0));
+// 	// printf("%s\n", ft_itoa(2147483647));
+// 	// printf("%s\n", ft_itoa(-2147483648));
 // 	return (0);
 // }

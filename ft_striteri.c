@@ -6,7 +6,7 @@
 /*   By: yshimoma <yshimoma@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 23:37:01 by shimomayuda       #+#    #+#             */
-/*   Updated: 2023/01/24 19:57:36 by yshimoma         ###   ########.fr       */
+/*   Updated: 2023/01/28 19:34:37 by yshimoma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,6 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 //     // /* 7 */ ASSERT_EQ_STR(buf, "hello world");
 //     // ft_striteri(" 42!", tobuf);
 //     // /* 8 */ ASSERT_EQ_STR(buf, "hello world 42!");
-
 
 // 	return (0);
 // }

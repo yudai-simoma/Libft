@@ -6,7 +6,7 @@
 /*   By: yshimoma <yshimoma@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/11 20:52:17 by yshimoma          #+#    #+#             */
-/*   Updated: 2023/01/17 09:29:47 by yshimoma         ###   ########.fr       */
+/*   Updated: 2023/01/28 19:35:02 by yshimoma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -131,7 +131,8 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 // 	{
 // 		// printf("iがiがの時の1：%s\n",i,strnstr(str, "", i));
 // 		// printf("iが%dの時1：%s\n\n",i,ft_strnstr(str, "", i));
-// 		// 2ASSERT_EQ_PTR(ft_strnstr(str, "libft-test-tokyo", i), strnstr(str, "libft-test-tokyo", i));
+// 		// 2ASSERT_EQ_PTR(ft_strnstr(str, "libft-test-tokyo", i)
+				//, strnstr(str, "libft-test-tokyo", i));
 // 		// printf("iが%dの時3：%s\n",i,strnstr(str, "libft", i));
 // 		// printf("iが%dの時3：%s\n\n",i,ft_strnstr(str, "libft", i));
 // 		// printf("iが%dの時4：%s\n",i,strnstr(str, "test", i));

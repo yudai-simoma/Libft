@@ -6,7 +6,7 @@
 /*   By: yshimoma <yshimoma@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/14 16:33:24 by yshimoma          #+#    #+#             */
-/*   Updated: 2023/01/26 19:14:13 by yshimoma         ###   ########.fr       */
+/*   Updated: 2023/01/28 19:35:59 by yshimoma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,7 +95,6 @@ static int	ft_sign_check(const char *str)
 	}
 	return (sign);
 }
-
 
 /*
 ** strの文字列の最初の数字を、int型に変換する関数
