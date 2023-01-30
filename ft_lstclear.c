@@ -6,7 +6,7 @@
 /*   By: yshimoma <yshimoma@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 17:23:00 by yshimoma          #+#    #+#             */
-/*   Updated: 2023/01/30 21:10:18 by yshimoma         ###   ########.fr       */
+/*   Updated: 2023/01/30 21:14:36 by yshimoma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,4 +27,3 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 	}
 	lst = NULL;
 }
-//コミット確認
