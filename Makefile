@@ -6,7 +6,7 @@
 #    By: yshimoma <yshimoma@student.42tokyo.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/15 13:28:00 by yshimoma          #+#    #+#              #
-#    Updated: 2023/01/24 11:45:02 by yshimoma         ###   ########.fr        #
+#    Updated: 2023/01/31 11:52:52 by yshimoma         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,6 +22,10 @@ SRCS = ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c ft_isalpha.c\
 # 生成したいオブジェクトファイル名
 # SRCSで定義されている.cファイルから.oファイルを生成する
 OBJS = ${SRCS:.c=.o}
+# bonusPratのプログラム
+SRCS_BONUS = ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c\
+	ft_lstadd_back.c ft_lstdelone.c ft_lstclear.c ft_lstiter.c ft_lstmap.c
+OBJS_BONUS = ${SRCS_BONUS:.c=.o}
 # 生成したい静的ライブラリ名
 NAME = libft.a
 # コンパイラの指定
@@ -29,12 +33,18 @@ CC = cc
 # コンパイルオプション
 CFLAGS = -Wall -Wextra -Werror
 
+# ボーナスが呼ばれた場合は、ボーナスのソースも追加する
+ALL_OBJS = ${OBJS}
+ifdef BONUS_FLG
+ALL_OBJS += ${OBJS_BONUS}
+endif
+
 # clean fclean reを実行する(ビルドを実行)
 all:	${NAME}
 
 # oファイルを.aファイルにコンパイルされる
-${NAME}:	${OBJS}
-	ar -r ${NAME} ${OBJS}
+${NAME}:	${ALL_OBJS}
+	ar -r ${NAME} ${ALL_OBJS}
 
 # .cファイルを.oファイルに変換
 .c.o:
@@ -42,7 +52,7 @@ ${NAME}:	${OBJS}
 
 # 全てのオブジェクトファイルを削除
 clean:
-	${RM} ${OBJS}
+	${RM} ${OBJS} ${OBJS_BONUS} 
 
 # 全てのオブジェクトファイルと静的ライブラリを削除
 fclean:	clean
@@ -51,4 +61,8 @@ fclean:	clean
 # fclean→allを実行(コンパイルのやり直し)
 re:	fclean all
 
-.PHONY:	all clean fclean re
+# ボーナスが呼ばれたら、ブラグをtrueにする
+bonus:
+	@make BONUS_FLG=1
+
+.PHONY:	all clean fclean re bonus
