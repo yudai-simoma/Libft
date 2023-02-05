@@ -6,7 +6,7 @@
 /*   By: yshimoma <yshimoma@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 13:15:55 by yshimoma          #+#    #+#             */
-/*   Updated: 2023/01/31 19:29:29 by yshimoma         ###   ########.fr       */
+/*   Updated: 2023/02/05 16:40:44 by yshimoma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ char	*ft_strdup(const char *src)
 	char	*src_mal;
 	int		i;
 
-	src_mal = (char *)malloc(sizeof(char) * (ft_strlen(src) + 1));
+	src_mal = (char *)ft_calloc(sizeof(char) * (ft_strlen(src) + 1), 1);
 	if (src_mal == NULL)
 		return (NULL);
 	i = 0;

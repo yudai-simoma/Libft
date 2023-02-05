@@ -6,7 +6,7 @@
 /*   By: yshimoma <yshimoma@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 12:54:22 by yshimoma          #+#    #+#             */
-/*   Updated: 2023/01/31 20:06:26 by yshimoma         ###   ########.fr       */
+/*   Updated: 2023/02/05 16:42:23 by yshimoma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	if (s1 == NULL || s2 == NULL)
 		return (ft_return(s1, s2));
 	malloc_size = ft_strlen(s1) + ft_strlen(s2);
-	return_src = (char *)malloc(sizeof(char) * (malloc_size + 1));
+	return_src = (char *)ft_calloc(sizeof(char) * (malloc_size + 1), 1);
 	if (return_src == NULL)
 		return (NULL);
 	i = 0;

@@ -6,7 +6,7 @@
 /*   By: yshimoma <yshimoma@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 23:30:48 by shimomayuda       #+#    #+#             */
-/*   Updated: 2023/01/31 19:29:08 by yshimoma         ###   ########.fr       */
+/*   Updated: 2023/02/05 16:42:09 by yshimoma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ static char	*ft_add_s(char const *s, char c)
 	i = 0;
 	while (s[i] != '\0' && charset_jud(s[i], c) == 1)
 		i++;
-	return_str = (char *)malloc(sizeof(char) * (i + 1));
+	return_str = (char *)ft_calloc(sizeof(char) * (i + 1), sizeof(char));
 	if (return_str == NULL)
 		return (NULL);
 	i = 0;
@@ -87,7 +87,7 @@ static char	**ft_array_malloc(char const *s, char c)
 		while (s[i] != '\0' && charset_jud(s[i], c) == 1)
 			i++;
 	}
-	return_str = (char **)malloc(sizeof(char *) * (array_size + 1));
+	return_str = (char **)ft_calloc(sizeof(char *) * (array_size + 1), 1);
 	return (return_str);
 }
 

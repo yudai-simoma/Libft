@@ -6,7 +6,7 @@
 /*   By: yshimoma <yshimoma@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/22 15:37:32 by yshimoma          #+#    #+#             */
-/*   Updated: 2023/01/31 20:49:40 by yshimoma         ###   ########.fr       */
+/*   Updated: 2023/02/05 16:42:27 by yshimoma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 
 	if ((s == NULL) || (f == NULL))
 		return (NULL);
-	src = (char *)malloc(sizeof(char) * ft_strlen(s) + 1);
+	src = (char *)ft_calloc(sizeof(char) * ft_strlen(s) + 1, sizeof(char));
 	if (src == NULL)
 		return (NULL);
 	i = 0;

@@ -6,7 +6,7 @@
 /*   By: yshimoma <yshimoma@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 11:43:57 by yshimoma          #+#    #+#             */
-/*   Updated: 2023/01/31 20:14:25 by yshimoma         ###   ########.fr       */
+/*   Updated: 2023/02/05 16:42:58 by yshimoma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		malloc_size = ft_strlen(s) - (size_t)start;
 	else
 		malloc_size = len;
-	return_str = (char *)malloc(sizeof(char) * (malloc_size + 1));
+	return_str = (char *)ft_calloc(sizeof(char) * (malloc_size + 1), 1);
 	if (return_str == NULL)
 		return (NULL);
 	i = 0;

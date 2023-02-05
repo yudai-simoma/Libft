@@ -6,7 +6,7 @@
 /*   By: yshimoma <yshimoma@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 23:32:13 by shimomayuda       #+#    #+#             */
-/*   Updated: 2023/01/31 19:26:30 by yshimoma         ###   ########.fr       */
+/*   Updated: 2023/02/05 16:36:51 by yshimoma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,7 +100,7 @@ char	*ft_itoa(int n)
 
 	nn = (long)n;
 	malloc_size = ft_malloc_size(nn);
-	return_str = (char *)ft_calloc(malloc_size + 1, 1);
+	return_str = (char *)ft_calloc(malloc_size + 1, sizeof(char));
 	if (return_str == NULL)
 		return (NULL);
 	sign = '+';
