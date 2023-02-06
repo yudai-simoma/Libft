@@ -6,7 +6,7 @@
 /*   By: yshimoma <yshimoma@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 10:54:53 by yshimoma          #+#    #+#             */
-/*   Updated: 2023/02/05 16:37:44 by yshimoma         ###   ########.fr       */
+/*   Updated: 2023/02/06 16:18:15 by yshimoma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ t_list	*ft_lstnew(void *content)
 {
 	t_list	*return_list;
 
-	return_list = (t_list *)ft_calloc(sizeof(t_list), sizeof(t_list));
+	return_list = (t_list *)ft_calloc(1, sizeof(t_list));
 	if (return_list == NULL)
 		return (NULL);
 	return_list->content = content;

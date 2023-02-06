@@ -6,7 +6,7 @@
 #    By: yshimoma <yshimoma@student.42tokyo.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/15 13:28:00 by yshimoma          #+#    #+#              #
-#    Updated: 2023/01/31 11:52:52 by yshimoma         ###   ########.fr        #
+#    Updated: 2023/02/06 15:53:48 by yshimoma         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -40,11 +40,11 @@ ALL_OBJS += ${OBJS_BONUS}
 endif
 
 # clean fclean reを実行する(ビルドを実行)
-all:	${NAME}
+all:	$(NAME)
 
 # oファイルを.aファイルにコンパイルされる
-${NAME}:	${ALL_OBJS}
-	ar -r ${NAME} ${ALL_OBJS}
+$(NAME):	${ALL_OBJS}
+	ar -r $(NAME) ${ALL_OBJS}
 
 # .cファイルを.oファイルに変換
 .c.o:
@@ -56,7 +56,7 @@ clean:
 
 # 全てのオブジェクトファイルと静的ライブラリを削除
 fclean:	clean
-	${RM} ${NAME}
+	${RM} $(NAME)
 
 # fclean→allを実行(コンパイルのやり直し)
 re:	fclean all
