@@ -6,7 +6,7 @@
 /*   By: yshimoma <yshimoma@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/14 16:33:24 by yshimoma          #+#    #+#             */
-/*   Updated: 2023/02/10 21:51:03 by yshimoma         ###   ########.fr       */
+/*   Updated: 2023/02/11 21:18:33 by yshimoma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,8 +89,8 @@ static int	ft_sign_check(const char *str)
 */
 int	ft_atoi(const char *str)
 {
-	int	sign;
-	int	result_num;
+	int		sign;
+	long	result_num;
 
 	result_num = 0;
 	if (ft_err_check(str))
