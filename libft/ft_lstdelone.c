@@ -6,7 +6,7 @@
 /*   By: yshimoma <yshimoma@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 17:08:26 by yshimoma          #+#    #+#             */
-/*   Updated: 2023/01/31 12:57:37 by yshimoma         ###   ########.fr       */
+/*   Updated: 2023/02/07 13:30:16 by yshimoma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,4 +21,5 @@ void	ft_lstdelone(t_list *lst, void (*del)(void *))
 		return ;
 	del(lst->content);
 	free(lst);
+	lst = NULL;
 }

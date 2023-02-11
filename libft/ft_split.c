@@ -6,7 +6,7 @@
 /*   By: yshimoma <yshimoma@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 23:30:48 by shimomayuda       #+#    #+#             */
-/*   Updated: 2023/02/05 16:42:09 by yshimoma         ###   ########.fr       */
+/*   Updated: 2023/02/07 13:30:52 by yshimoma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,11 @@ static char	**ft_free(char **split_s, size_t j)
 	while (i < j)
 	{
 		free(split_s[i]);
+		split_s[i] = NULL;
 		i++;
 	}
 	free(split_s);
+	split_s = NULL;
 	return (NULL);
 }
 

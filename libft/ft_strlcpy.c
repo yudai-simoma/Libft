@@ -6,7 +6,7 @@
 /*   By: yshimoma <yshimoma@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 11:54:48 by yshimoma          #+#    #+#             */
-/*   Updated: 2023/01/31 20:06:55 by yshimoma         ###   ########.fr       */
+/*   Updated: 2023/02/10 21:50:18 by yshimoma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,13 +21,7 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 	size_t	i;
 	size_t	src_len;
 
-	i = 0;
-	src_len = 0;
-	while (src[i] != '\0')
-	{
-		src_len++;
-		i++;
-	}
+	src_len = ft_strlen(src);
 	i = 0;
 	while (i + 1 < dstsize && src[i] != '\0' )
 	{

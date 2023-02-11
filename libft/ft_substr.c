@@ -6,7 +6,7 @@
 /*   By: yshimoma <yshimoma@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 11:43:57 by yshimoma          #+#    #+#             */
-/*   Updated: 2023/02/05 16:42:58 by yshimoma         ###   ########.fr       */
+/*   Updated: 2023/02/10 21:05:08 by yshimoma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ static int	ft_err_check(char const *s, unsigned int start)
 
 /*
  * s文字列の中で、startから最大len分文字を抽出し、戻り値として返す。
- "abcdefghijklmn",3,20    defg
  */
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
