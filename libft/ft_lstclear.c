@@ -6,7 +6,7 @@
 /*   By: yshimoma <yshimoma@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 17:23:00 by yshimoma          #+#    #+#             */
-/*   Updated: 2023/02/07 13:29:26 by yshimoma         ###   ########.fr       */
+/*   Updated: 2023/02/12 15:12:29 by yshimoma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
 	t_list	*cp_lst;
 
-	if (lst == NULL || del == NULL)
+	if (lst == NULL || *lst == NULL || del == NULL)
 		return ;
 	while (*lst != NULL)
 	{
