@@ -6,7 +6,7 @@
 #    By: yshimoma <yshimoma@student.42tokyo.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/15 13:28:00 by yshimoma          #+#    #+#              #
-#    Updated: 2023/02/06 15:53:48 by yshimoma         ###   ########.fr        #
+#    Updated: 2023/02/12 15:38:03 by yshimoma         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -65,4 +65,5 @@ re:	fclean all
 bonus:
 	@make BONUS_FLG=1
 
+# サブコマンドを実行するために記載（ディレクトリに同名のファイルがあっても実行される）
 .PHONY:	all clean fclean re bonus
