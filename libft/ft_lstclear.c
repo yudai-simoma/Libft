@@ -6,7 +6,7 @@
 /*   By: yshimoma <yshimoma@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 17:23:00 by yshimoma          #+#    #+#             */
-/*   Updated: 2023/02/12 15:12:29 by yshimoma         ###   ########.fr       */
+/*   Updated: 2023/02/13 16:24:52 by yshimoma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,5 +29,5 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 		*lst = NULL;
 		*lst = cp_lst->next;
 	}
-	lst = NULL;
+	*lst = NULL;
 }
