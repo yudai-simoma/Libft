@@ -6,7 +6,7 @@
 /*   By: yshimoma <yshimoma@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 23:30:48 by shimomayuda       #+#    #+#             */
-/*   Updated: 2023/02/07 13:30:52 by yshimoma         ###   ########.fr       */
+/*   Updated: 2023/03/01 21:39:48 by yshimoma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,14 +71,12 @@ static char	*ft_add_s(char const *s, char c)
 static char	**ft_array_malloc(char const *s, char c)
 {
 	size_t	i;
-	size_t	flg;
 	size_t	array_size;
 	char	**return_str;
 
 	if (s == NULL)
 		return (NULL);
 	i = 0;
-	flg = 0;
 	array_size = 0;
 	while (s[i] != '\0')
 	{

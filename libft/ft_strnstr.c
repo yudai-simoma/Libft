@@ -6,7 +6,7 @@
 /*   By: yshimoma <yshimoma@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/11 20:52:17 by yshimoma          #+#    #+#             */
-/*   Updated: 2023/01/31 20:13:16 by yshimoma         ###   ########.fr       */
+/*   Updated: 2023/03/01 21:39:16 by yshimoma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,10 +43,8 @@ static size_t	ft_strlen_null(const char *s)
 static int	ft_match_src(const char *haystack, const char *needle, size_t len)
 {
 	size_t	i;
-	size_t	match_count;
 
 	i = 0;
-	match_count = 0;
 	while (*haystack != '\0' && needle[i] != '\0' && i < len)
 	{
 		if (*haystack != needle[i])
